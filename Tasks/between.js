@@ -3,16 +3,12 @@
 getvaluebetween = (str, prefix, suffix) => {
   const prefixIdx = str.indexOf(prefix);
   if (prefixIdx === -1) return '';
-  else {
-    const k = prefixIdx + prefix.length;
-    str = str.substring(k);
-    if (suffix) {
-      const suffixIdx = str.indexOf(suffix);
-      if (suffixIdx === -1) return '';
-      else {
-        str = str.substring(0, suffixIdx);
-      }
-    }
+  const k = prefixIdx + prefix.length;
+  str = str.substring(k);
+  if (suffix) {
+    const suffixIdx = str.indexOf(suffix);
+    if (suffixIdx === -1) return '';
+    str = str.substring(0, suffixIdx);
   }
   return str;
 };
